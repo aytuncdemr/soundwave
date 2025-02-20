@@ -1,8 +1,7 @@
-//@ts-nocheck;
 import { User } from "@/interfaces/interfaces";
 import crypto from "crypto";
 
-async function addOrderMongoDB() {}
+// async function addOrderMongoDB() {}
 
 async function generateOID() {
 	return "1234";
@@ -49,12 +48,12 @@ export async function POST(request: Request) {
 				{ status: 500 }
 			);
 		}
-		let basket = JSON.stringify([
+		const basket = JSON.stringify([
 			["Örnek Ürün 1", "18.00", 1],
 			["Örnek Ürün 2", "33.25", 2],
 			["Örnek Ürün 3", "45.42", 1],
 		]);
-		let user_basket = Buffer.from(basket).toString("base64");
+		const user_basket = Buffer.from(basket).toString("base64");
 
 		const merchant_oid = await generateOID();
 		const paytr_body = {
