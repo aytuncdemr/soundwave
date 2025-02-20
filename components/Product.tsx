@@ -122,7 +122,7 @@ export default function Product() {
 			return () => clearTimeout(timeOutId);
 		}
 		setInitialRender(false);
-	}, [userContext?.user?.bucket]);
+	}, [userContext,initialRender]);
 	console.log(activeImageIndex);
 	return (
 		<div className="product-container max-w-[36rem] xl:max-w-[82rem] mx-auto flex flex-col gap-16">

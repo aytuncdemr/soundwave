@@ -18,7 +18,7 @@ export default function ProfilePage() {
 		if (!userContext?.user) {
 			router.push("/");
 		}
-	}, [userContext?.user]);
+	}, [userContext?.user,router]);
 
 	function submitHandler(e: FormEvent) {
 		e.preventDefault();

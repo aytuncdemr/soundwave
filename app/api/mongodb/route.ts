@@ -33,7 +33,9 @@ export async function GET(request: Request) {
 		return new Response(JSON.stringify(data), { status: 200 });
 	}
 
-	return new Response(JSON.stringify("Beklenmedik bir hata oluştu"), { status: 500 });
+	return new Response(JSON.stringify("Beklenmedik bir hata oluştu"), {
+		status: 500,
+	});
 }
 
 export async function POST(request: Request) {
@@ -59,6 +61,9 @@ export async function POST(request: Request) {
 			return new Response("User not found", { status: 404 });
 		}
 	} catch (error) {
-		return new Response("Something went wrong", { status: 500 });
+		return new Response(
+			JSON.stringify(error instanceof Error ? error.message : error),
+			{ status: 500 }
+		);
 	}
 }

@@ -15,7 +15,7 @@ export default function SignForm() {
 		if (userContext?.user) {
 			router.push("/");
 		}
-	}, [userContext]);
+	}, [userContext,router]);
 
 	return (
 		<div>

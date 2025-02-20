@@ -1,7 +1,6 @@
 "use client";
 
 import {
-	faChevronCircleDown,
 	faChevronDown,
 	faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";

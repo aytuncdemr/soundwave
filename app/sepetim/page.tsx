@@ -71,7 +71,7 @@ export default function BasketPage() {
 			return () => clearTimeout(timeOutId);
 		}
 		setInitialRender(false);
-	}, [userContext?.user?.bucket]);
+	}, [userContext,initialRender]);
 
 	return (
 		<>

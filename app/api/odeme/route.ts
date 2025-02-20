@@ -1,3 +1,4 @@
+//@ts-nocheck;
 import { User } from "@/interfaces/interfaces";
 import crypto from "crypto";
 
@@ -102,7 +103,7 @@ export async function POST(request: Request) {
 		formData.append("max_installment", String(paytr_body.max_installment));
 		formData.append("currency", paytr_body.currency);
 		formData.append("paytr_token", paytr_body.paytr_token);
-		console.log("Formdata:",formData);
+		console.log("Formdata:", formData);
 		const response = await fetch(
 			"https://www.paytr.com/odeme/api/get-token",
 			{

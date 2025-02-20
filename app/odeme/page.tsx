@@ -8,7 +8,7 @@ export default function PaymentPage() {
 	const userContext = useContext(UserContext);
 	const router = useRouter();
 	const total = useSearchParams().get("total");
-	const [error,setError] = useState<string|null>(null);
+	const [error, setError] = useState<string | null>(null);
 	useEffect(() => {
 		if (!userContext?.user || !total) {
 			router.push("/");
@@ -27,21 +27,22 @@ export default function PaymentPage() {
 
 				const data = await response.json();
 				console.log(data);
-
 			} catch (error) {
-				if(error instanceof Error){
+				if (error instanceof Error) {
 					setError(error.message);
 				}
-				if(error instanceof String){
+				if (error instanceof String) {
 					setError(error as string);
 				}
 			}
 		})();
-	}, []);
+	});
 
-	return <section className="pay-section">
-
-	{error && <p className="text-red-500 text-center text-2xl">{error}</p>}
-
-	</section>;
+	return (
+		<section className="pay-section">
+			{error && (
+				<p className="text-red-500 text-center text-2xl">{error}</p>
+			)}
+		</section>
+	);
 }

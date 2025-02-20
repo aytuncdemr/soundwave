@@ -39,7 +39,7 @@ export default function ExampleProduct() {
 				</h2>
 				<p className="text-lg lg:text-xl font-thin lg:mt-4 text-gray-500 px-2">
 					Hafif, taşınabilir ve kullanıcı dostu bir drone paketidir.
-					Full HD video çekimi, 4 km'ye kadar iletim mesafesi ve 26
+					Full HD video çekimi, 4 km&apos;ye kadar iletim mesafesi ve 26
 					dakikalık uçuş süresi gibi özelliklerle, hem hobi amaçlı hem
 					de profesyonel kullanıcılara hitap eder. Fly More Combo
 					seti, ek bataryalar, pervaneler ve taşıma çantası gibi

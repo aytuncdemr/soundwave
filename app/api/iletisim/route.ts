@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 export interface FormData {
 	name: string | null;
@@ -57,9 +57,12 @@ export async function POST(request: Request) {
 			{ status: 200, headers: { "Content-Type": "application/json" } }
 		);
 	} catch (error) {
-		return new Response(JSON.stringify("Beklenmeyen bir hata oluştu."), {
-			status: 500,
-			headers: { "Content-Type": "application/json" },
-		});
+		return new Response(
+			JSON.stringify(error instanceof Error ? error.message : error),
+			{
+				status: 500,
+				headers: { "Content-Type": "application/json" },
+			}
+		);
 	}
 }

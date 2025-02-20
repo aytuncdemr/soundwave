@@ -32,9 +32,12 @@ export async function POST(request: Request) {
 			});
 		}
 	} catch (error) {
-		return new Response(JSON.stringify("Birşeyler ters gitti."), {
-			status: 500,
-			headers: { "Content-Type": "application/json" },
-		});
+		return new Response(
+			JSON.stringify(error instanceof Error ? error.message : error),
+			{
+				status: 500,
+				headers: { "Content-Type": "application/json" },
+			}
+		);
 	}
 }
