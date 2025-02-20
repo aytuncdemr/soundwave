@@ -33,7 +33,7 @@ body {
 			rgba(50, 50, 50, 0.73),
 			rgba(50, 50, 50, 0.73)
 		),
-		url("../public/banner.jpeg");
+		url("/banner.jpeg");
 	background-size: cover;
 	background-position: center;
 
